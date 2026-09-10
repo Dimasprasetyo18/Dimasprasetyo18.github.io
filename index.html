@@ -67,28 +67,35 @@
                 radial-gradient(circle at 80% 30%, #3d267c 0%, transparent 30%),
                 radial-gradient(circle at 20% 80%, #142c63 0%, transparent 30%),
                 #0b1020;
+            gap: 50px;
         }
 
         .hero-content {
             max-width: 700px;
-            
+            flex: 1;
         }
 
         /* FOTO DIMAS */
         .hero-photo {
-            width: 40%;
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .hero-photo img {
-            width: 380px;
-            height: 500px;
+            width: 350px;
+            height: 450px;
             object-fit: cover;
             border-radius: 30px;
             border: 3px solid #7c4dff;
-            box-shadow: 0 0 30px #7c4dff;
+            box-shadow: 0 0 40px rgba(124, 77, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .hero-photo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(124, 77, 255, 0.8);
         }
 
         .hero h1 {
@@ -316,11 +323,15 @@
             .hero {
                 flex-direction: column;
                 padding: 100px 5% 50px;
+                gap: 30px;
+            }
+
+            .hero-content {
+                max-width: 100%;
             }
 
             .hero-photo {
                 width: 100%;
-                margin-top: 30px;
             }
 
             .hero-photo img {
@@ -396,7 +407,7 @@
 
         <!-- FOTO DIMAS -->
         <div class="hero-photo">
-            <div style="font-size: 120px;">👨‍💼</div>
+            <img src="https://raw.githubusercontent.com/Dimasprasetyo18/Dimasprasetyo18.github.io/main/dimas-profile.jpg" alt="Dimas Prasetyo" loading="lazy">
         </div>
 
     </section>
