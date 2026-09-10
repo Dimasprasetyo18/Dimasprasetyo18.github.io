@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dimas Prasetyo | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 16, 32, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7c5cff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7c5cff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 8% 50px;
+            background:
+                radial-gradient(circle at 80% 30%, #3d267c 0%, transparent 30%),
+                radial-gradient(circle at 20% 80%, #142c63 0%, transparent 30%),
+                #0b1020;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            
+        }
+
+        /* FOTO DIMAS */
+        .hero-photo {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-photo img {
+            width: 380px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 3px solid #7c4dff;
+            box-shadow: 0 0 30px #7c4dff;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #7c5cff;
+        }
+
+        .hero h2 {
+            color: #bbb;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #6c4cff, #00aaff);
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #7c5cff;
+        }
+
+        /* SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #7c5cff;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: #121a30;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #252e4a;
+        }
+
+        .about-box h3 {
+            color: #7c5cff;
+            margin-bottom: 15px;
+        }
+
+        .data {
+            margin-top: 15px;
+        }
+
+        .data p {
+            margin: 10px 0;
+            color: #bbb;
+        }
+
+        .data strong {
+            color: white;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: #121a30;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #252e4a;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #7c5cff;
+        }
+
+        .skill .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #aaa;
+        }
+
+        /* EXPERIENCE */
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .job {
+            background: #121a30;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 4px solid #7c5cff;
+            border-radius: 10px;
+        }
+
+        .job h3 {
+            color: #7c5cff;
+        }
+
+        .job small {
+            color: #888;
+        }
+
+        .job ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #bbb;
+        }
+
+        /* HOBBY */
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .hobby {
+            background: #121a30;
+            padding: 30px;
+            text-align: center;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            transform: scale(1.04);
+        }
+
+        .hobby div {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+        .contact {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: #121a30;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .contact-box p {
+            color: #bbb;
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #070b16;
+            color: #777;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 100px 5% 50px;
+            }
+
+            .hero-photo {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .hero-photo img {
+                width: 250px;
+                height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .hobbies {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">DIMAS PRASETYO.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#hobby">Hobi</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Halo, Saya <span>Dimas PRASETYO</span></h1>
+
+            <h2>Web Enthusiast • Admin • Creative</h2>
+
+            <p>
+                Saya adalah seseorang yang tertarik dengan dunia teknologi,
+                komputer, desain, dan pengembangan website.
+                Saya senang mempelajari hal baru dan mengembangkan kemampuan
+                untuk menunjang pekerjaan.
+            </p>
+
+            <a href="#contact" class="btn">
+                Hubungi Saya
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Lihat Profil
+            </a>
+
+        </div>
+
+        <!-- FOTO DIMAS -->
+        <div class="hero-photo">
+            <div style="font-size: 120px;">👨‍💼</div>
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">
+            Tentang <span>Saya</span>
+        </h2>
+
+        <div class="about">
+
+            <div class="about-box">
+
+                <h3>Profil Saya</h3>
+
+                <p>
+                    Saya memiliki ketertarikan terhadap teknologi,
+                    komputer, administrasi, desain grafis, serta
+                    pembuatan website.
+                </p>
+
+                <p style="margin-top:15px;">
+                    Saya terbiasa bekerja dengan berbagai tugas,
+                    mampu belajar dengan cepat, dan senang bekerja
+                    secara individu maupun bersama tim.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>Data Diri</h3>
+
+                <div class="data">
+
+                    <p>
+                        <strong>Nama:</strong>
+                        Dimas Prasetyo
+                    </p>
+
+                    <p>
+                        <strong>Domisili:</strong>
+                        Pangkalpinang
+                    </p>
+
+                    <p>
+                        <strong>Pendidikan:</strong>
+                        S1 Atma Luhur AMIK
+                    </p>
+
+                    <p>
+                        <strong>Bidang:</strong>
+                        Teknologi & Kreatif
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        Terbuka untuk kesempatan kerja
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            Keahlian <span>Saya</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <div class="icon">💻</div>
+                <h3>Komputer</h3>
+                <p>
+                    Mampu mengoperasikan komputer dan
+                    berbagai aplikasi pendukung pekerjaan.
+                </p>
+            </div>
+
+            <div class="skill">
+                <div class="icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>
+                    Memahami dasar HTML, CSS dan
+                    pembuatan website sederhana.
+                </p>
+            </div>
+
+            <div class="skill">
+                <div class="icon">🎨</div>
+                <h3>Desain</h3>
+                <p>
+                    Membuat desain menggunakan Canva
+                    dan berbagai tools kreatif.
+                </p>
+            </div>
+
+            <div class="skill">
+                <div class="icon">🛠️</div>
+                <h3>Teknisi</h3>
+                <p>
+                    Memiliki pengalaman melakukan
+                    perbaikan perangkat dan peralatan.
+                </p>
+            </div>
+
+            <div class="skill">
+                <div class="icon">📱</div>
+                <h3>Administrasi</h3>
+                <p>
+                    Mengelola komunikasi, data,
+                    dan pekerjaan administrasi.
+                </p>
+            </div>
+
+            <div class="skill">
+                <div class="icon">🤖</div>
+                <h3>AI Tools</h3>
+                <p>
+                    Tertarik menggunakan AI untuk
+                    membantu pekerjaan dan kreativitas.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <h2 class="section-title">
+            Pengalaman <span>Kerja</span>
+        </h2>
+
+        <div class="timeline">
+
+            <div class="job">
+
+                <h3>Pengembangan Website</h3>
+
+                <small>
+                    Personal Project
+                </small>
+
+                <ul>
+                    <li>Membuat website menggunakan HTML dan CSS.</li>
+                    <li>Mempelajari desain website responsif.</li>
+                    <li>Mengembangkan konsep website untuk bisnis.</li>
+                    <li>Mempelajari teknologi dan tools AI.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section>
+
+        <h2 class="section-title">
+            Pendidikan
+        </h2>
+
+        <div class="timeline">
+
+            <div class="job">
+
+                <h3>S1 Atma Luhur AMIK</h3>
+
+                <small>
+                    Perguruan Tinggi
+                </small>
+
+                <p style="margin-top:15px;color:#bbb;">
+                    Mempelajari berbagai bidang yang berhubungan
+                    dengan teknologi informasi dan komputer.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBBY -->
+    <section id="hobby">
+
+        <h2 class="section-title">
+            Hobi & <span>Minat</span>
+        </h2>
+
+        <div class="hobbies">
+
+            <div class="hobby">
+                <div>🎮</div>
+                <h3>Gaming</h3>
+                <p>PlayStation & game</p>
+            </div>
+
+            <div class="hobby">
+                <div>🎨</div>
+                <h3>Desain</h3>
+                <p>Desain grafis & editing</p>
+            </div>
+
+            <div class="hobby">
+                <div>🎵</div>
+                <h3>Musik</h3>
+                <p>Remix & DJ</p>
+            </div>
+
+            <div class="hobby">
+                <div>🎣</div>
+                <h3>Fishing</h3>
+                <p>Memancing</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="section-title">
+            Hubungi <span>Saya</span>
+        </h2>
+
+        <div class="contact">
+
+            <div class="contact-box">
+
+                <p>
+                    📧 <strong>Email:</strong>
+                    akuajah030115@gmail.com
+                </p>
+
+                <p>
+                    📞 <strong>WhatsApp:</strong>
+                    <a href="https://wa.me/085758545338?text=Halo%20Dimas,%20saya%20tertarik%20dengan%20profil%20dan%20portofolio%20kamu." target="_blank">
+                        💬 Chat WhatsApp
+                    </a>
+                </p>
+
+                <p>
+                    📷 <strong>Instagram:</strong>
+                    <a href="https://www.instagram.com/dimas_prstyo18/" target="_blank">
+                        Instagram Saya
+                    </a>
+                </p>
+
+                <p>
+                    📍 <strong>Lokasi:</strong>
+                    Bangka Belitung, Pangkalpinang, Indonesia
+                </p>
+
+                <br>
+
+                <a href="mailto:akuajah030115@gmail.com" class="btn">
+                    Kirim Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Dimas Prasetyo.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
